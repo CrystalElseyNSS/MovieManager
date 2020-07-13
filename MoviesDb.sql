@@ -23,7 +23,7 @@ CREATE TABLE [Movie] (
     [Title] NVARCHAR(255) NOT NULL,
     [Year] INTEGER NOT NULL,
     [Url] NVARCHAR(255) NOT NULL,
-    [Rating] DECIMAL NOT NULL,
+    [Rating] DECIMAL(2,1) NOT NULL,
     [GenreId] INTEGER NOT NULL,
 
     CONSTRAINT Fk_Movie_Genre FOREIGN KEY (GenreId) REFERENCES Genre(Id)
