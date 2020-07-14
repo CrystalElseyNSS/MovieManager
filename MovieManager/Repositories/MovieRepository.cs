@@ -24,7 +24,7 @@ namespace MovieManager.Repositories
         {
             return _context.Movie
                            .Include(m => m.Genre)
-                           .FirstOrDefault(m => m.Id == id);
+                           .FirstOrDefault(m => m.GenreId == id);
         }
 
         public void Add(Movie movie)

@@ -34,13 +34,13 @@ namespace MovieManager.Controllers
         }
  
         [HttpPost]
-        public IActionResult Post(Movie movie)
+        public IActionResult AddMovie(Movie movie)
         {
             _movieRepository.Add(movie);
             return CreatedAtAction(nameof(Get), new { id = movie.Id }, movie);
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult Put(int id, Movie movie)
         {
             if (id != movie.Id)
