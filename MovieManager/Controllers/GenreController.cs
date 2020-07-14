@@ -25,10 +25,6 @@ namespace MovieManager.Controllers
         public IActionResult Get(int id)
         {
             var genre = _genreRepository.GetById(id);
-            if (genre == null)
-            {
-                return NotFound();
-            }
             return Ok(genre);
         }
     }
