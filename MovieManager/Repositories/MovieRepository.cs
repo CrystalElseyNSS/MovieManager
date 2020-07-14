@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MovieManager.Data;
-using MovieManager.Models;
 using System.Collections.Generic;
 using System.Linq;
+using MovieManager.Data;
+using MovieManager.Models;
 
 namespace MovieManager.Repositories
 {
@@ -17,10 +17,9 @@ namespace MovieManager.Repositories
 
         public List<Movie> GetAll()
         {
-            return _context.Movie
-                           .Include(m => m.Genre)
-                           .ToList();
+            return _context.Movie.ToList();
         }
+
         public Movie GetById(int id)
         {
             return _context.Movie
@@ -44,7 +43,6 @@ namespace MovieManager.Repositories
         {
             var movie = GetById(id);
             _context.Remove(movie);
-            _context.SaveChanges();
         }
     }
 }
